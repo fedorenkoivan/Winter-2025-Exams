@@ -4,22 +4,14 @@
 'use strict';
 
 const getValueBetween = (string, prefix, suffix) => {
-  let index = string.indexOf(prefix);
-  if (index === -1) {
-    return '';
-  } else {
-    const k = index + prefix.length;
-    string = string.substring(k);
-    if (suffix) {
-      index = string.indexOf(suffix);
-      if (index === -1) {
-        return '';
-      } else {
-        string = string.substring(0, index);
-      }
-    }
-  }
-  return string;
+  const prefixIndex = string.indexOf(prefix);
+  if (prefixIndex === -1) return '';
+
+  const start = prefixIndex + prefix.length;
+  const suffixIndex = string.indexOf(suffix, start);
+  if (suffixIndex === -1) return '';
+
+  return string.substring(start, suffixIndex);
 };
 
 module.exports = getValueBetween;
