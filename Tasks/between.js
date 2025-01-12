@@ -3,23 +3,23 @@
 
 'use strict';
 
-const getValueBetween = (str, p, s) => {
-  let i = str.indexOf(p);
-  if (i === -1) {
+const getValueBetween = (string, prefix, suffix) => {
+  let index = string.indexOf(prefix);
+  if (index === -1) {
     return '';
   } else {
-    const k = i + p.length;
-    str = str.substring(k);
-    if (s) {
-      i = str.indexOf(s);
-      if (i === -1) {
+    const k = index + prefix.length;
+    string = string.substring(k);
+    if (suffix) {
+      index = string.indexOf(suffix);
+      if (index === -1) {
         return '';
       } else {
-        str = str.substring(0, i);
+        string = string.substring(0, index);
       }
     }
   }
-  return str;
+  return string;
 };
 
 module.exports = getValueBetween;
