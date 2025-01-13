@@ -5,15 +5,15 @@
 
 const distinct = (data) => {
   const unique = new Set();
-  let index = 0;
-  data.forEach((element) => {
+  for (let i = 0; i < data.length; i++) {
+    const element = data[i];
     if (unique.has(element)) {
-      delete data[index];
+      delete data[i];
     } else {
       unique.add(element);
     }
-    index++;
-  });
+  }
+
   return data.filter((elem) => typeof elem === 'number');
 };
 
