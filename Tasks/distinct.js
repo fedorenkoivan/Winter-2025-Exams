@@ -2,19 +2,14 @@
 // Return an array without duplicates
 
 'use strict';
-
 const distinct = (data) => {
-  const unique = new Set();
-  const result = [];
-
-  for (const element of data) {
-    if (!unique.has(element)) {
-      unique.add(element);
-      result.push(element);
-    }
-  }
-
-  return result.filter((elem) => typeof elem === 'number');
+  const result = data.reduce(
+    (unique, element) => {
+      if (!unique.includes(element)) {
+        unique.push(element);
+      }
+      return unique;
+    }, []);
+return result;
 };
-
 module.exports = distinct;
