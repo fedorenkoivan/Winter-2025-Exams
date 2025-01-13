@@ -3,18 +3,18 @@
 
 'use strict';
 
-const DISTINCT = (data) => {
-  const A = new Set();
-  let w = 0;
-  data.forEach((a) => {
-    if (A.has(a)) {
-      delete data[w];
+const distinct = (data) => {
+  const unique = new Set();
+  let index = 0;
+  data.forEach((element) => {
+    if (unique.has(element)) {
+      delete data[index];
     } else {
-      A.add(a);
+      unique.add(element);
     }
-    w++;
+    index++;
   });
-  return data.filter((x) => typeof x === 'number');
+  return data.filter((elem) => typeof elem === 'number');
 };
 
-module.exports = DISTINCT;
+module.exports = distinct;
