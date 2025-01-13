@@ -14,8 +14,7 @@ const DISTINCT = (data) => {
     }
     w++;
   });
-  return data.filter
-  (x => typeof x === 'number');
+  return data.filter((x) => typeof x === 'number');
 };
 
 module.exports = DISTINCT;
