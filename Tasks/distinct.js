@@ -7,8 +7,7 @@ const distinct = (data) => {
   const unique = new Set();
   const result = [];
 
-  for (let i = 0; i < data.length; i++) {
-    const element = data[i];
+  for (const element of data) {
     if (!unique.has(element)) {
       unique.add(element);
       result.push(element);
