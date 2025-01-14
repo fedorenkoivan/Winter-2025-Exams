@@ -4,14 +4,15 @@
 'use strict';
 
 const deleteElements = (dict, ...elementsToDelete) => {
-  const arrayToChange = Object.assign(dict);
-  const intermediateVariable = Object.keys(arrayToChange);
-  intermediateVariable.forEach((Z) => {
-    if (elementsToDelete.includes(Z)) {
-      delete arrayToChange[Z];
+  const copy = Object.assign(dict);
+  const intermediateVariable = Object.keys(copy);
+  intermediateVariable.forEach((element) => {
+    console.log(element);
+    if (elementsToDelete.includes(element)) {
+      delete copy[element];
     }
   });
-  return arrayToChange;
+  return copy;
 };
 
 module.exports = deleteElements;
