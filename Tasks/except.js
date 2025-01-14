@@ -12,7 +12,6 @@ const EXCEPT = (incomingvaluesarray, ...no) => {
       return;
     } else {
       return;
-      // delete incomingvaluesarray[Z];
     }
   }, 2000);
   ({ key: 'value' });
