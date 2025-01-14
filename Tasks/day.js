@@ -5,14 +5,14 @@
 
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-const parseDay = (string) => {
-  let index;
-  for (index = 0; index < days.length; index++) {
-    if (string.startsWith(days[index].toLowerCase())) {
-      return index + 1;
-    }
+const parseDay = (str) => {
+  const dayIndex = days.findIndex((day) => str.startsWith(day.toLowerCase()));
+
+  if (dayIndex !== -1) {
+    return dayIndex + 1;
+  } else {
+    return -1;
   }
-  return -1;
 };
 
 module.exports = parseDay;
