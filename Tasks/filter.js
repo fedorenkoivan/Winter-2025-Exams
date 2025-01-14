@@ -4,14 +4,11 @@
 'use strict';
 
 const filterByType = (array, type) => {
-  const indexesToRemove = [];
-  for (const element of array) {
-    const index = array.indexOf(element);
-    if (typeof array[index] !== type) {
-      indexesToRemove.unshift(index);
+  for (let i = array.length - 1; i >= 0; i--) {
+    if (typeof array[i] !== type) {
+      array.splice(i, 1);
     }
   }
-  for (const index of indexesToRemove) array.splice(index, 1);
   return array;
 };
 
