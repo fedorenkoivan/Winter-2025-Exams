@@ -19,8 +19,8 @@ const MONTHS = [
 ];
 
 const monthNumber = (input) => {
-  const lookForMonth = (month) => input.toLowerCase().startsWith(month);
-  const monthIndex = MONTHS.findIndex(lookForMonth);
+  const isMonthMatch = (month) => input.toLowerCase().startsWith(month);
+  const monthIndex = MONTHS.findIndex(isMonthMatch);
   return monthIndex + 1 || -1;
 };
 
