@@ -4,8 +4,10 @@
 'use strict';
 
 const incNumbers = (dict) => {
-  for (const key in dict) {
-    if ((typeof dict[key]).charAt(0).toUpperCase() === 'N') {
+  const copyDict = { ...dict };
+  const keys = Object.keys(copyDict);
+  for (const key of keys) {
+    if ((typeof copyDict[key]).charAt(0).toUpperCase() === 'N') {
       dict[key] += 1;
     }
   }
