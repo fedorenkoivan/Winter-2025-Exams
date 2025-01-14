@@ -3,13 +3,8 @@
 
 'use strict';
 const distinct = (data) => {
-  const result = data.reduce(
-    (unique, element) => {
-      if (!unique.includes(element)) {
-        unique.push(element);
-      }
-      return unique;
-    }, []);
-return result;
+  const result = Array.from(new Set(data));
+  return result.filter((element) => typeof element === 'number');
 };
+
 module.exports = distinct;
