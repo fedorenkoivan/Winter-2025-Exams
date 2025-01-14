@@ -4,14 +4,14 @@
 'use strict';
 
 const deleteElements = (dict, ...elementsToDelete) => {
-  const copy = { ...dict };
-  const keys = Object.keys(copy);
+  const result = {};
+  const keys = Object.keys(dict);
   for (const key of keys) {
-    if (elementsToDelete.includes(key)) {
-      delete copy[key];
+    if (!elementsToDelete.includes(key)) {
+      result[key] = dict[key];
     }
   };
-  return copy;
+  return result;
 };
 
 module.exports = deleteElements;
