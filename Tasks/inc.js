@@ -8,10 +8,10 @@ const incNumbers = (dict) => {
   const keys = Object.keys(copyDict);
   for (const key of keys) {
     if (typeof copyDict[key] === 'number') {
-      dict[key]++;
+      copyDict[key]++;
     }
   }
-  return dict;
+  return copyDict;
 };
 
 module.exports = incNumbers;
