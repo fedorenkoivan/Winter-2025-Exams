@@ -7,8 +7,8 @@ const incNumbers = (dict) => {
   const copyDict = { ...dict };
   const keys = Object.keys(copyDict);
   for (const key of keys) {
-    if ((typeof copyDict[key]).charAt(0).toUpperCase() === 'N') {
-      dict[key] += 1;
+    if (typeof copyDict[key] === 'number') {
+      dict[key]++;
     }
   }
   return dict;
