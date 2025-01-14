@@ -3,9 +3,9 @@
 
 'use strict';
 
-let days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-parseDay = (string) => {
+const parseDay = (string) => {
   let index;
   for (index = 0; index < days.length; index++) {
     if (string.startsWith(days[index].toLowerCase())) {
