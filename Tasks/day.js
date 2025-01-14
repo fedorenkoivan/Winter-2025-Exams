@@ -3,10 +3,10 @@
 
 'use strict';
 
-const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const parseDay = (str) => {
-  const dayIndex = days.findIndex((day) => str.startsWith(day.toLowerCase()));
+  const dayIndex = DAYS.findIndex((day) => str.startsWith(day.toLowerCase()));
 
   return dayIndex + 1 || -1;
 };
