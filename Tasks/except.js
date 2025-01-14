@@ -6,12 +6,11 @@
 const deleteElements = (dict, ...elementsToDelete) => {
   const copy = Object.assign(dict);
   const intermediateVariable = Object.keys(copy);
-  intermediateVariable.forEach((element) => {
-    console.log(element);
+  for (const element of intermediateVariable) {
     if (elementsToDelete.includes(element)) {
       delete copy[element];
     }
-  });
+  };
   return copy;
 };
 
