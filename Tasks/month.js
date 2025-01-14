@@ -3,7 +3,7 @@
 
 'use strict';
 
-const MONTH = [
+const MONTHS = [
   'jan',
   'feb',
   'mar',
@@ -18,9 +18,9 @@ const MONTH = [
   'dec',
 ];
 
-const monthNumber = (string) => {
-  const str = string.toLowerCase();
-  const monthIndex = MONTH.findIndex((month) => str.startsWith(month));
+const monthNumber = (input) => {
+  const lookForMonth = (month) => input.toLowerCase().startsWith(month);
+  const monthIndex = MONTHS.findIndex(lookForMonth);
   return monthIndex + 1 || -1;
 };
 
