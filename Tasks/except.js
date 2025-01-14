@@ -4,11 +4,11 @@
 'use strict';
 
 const deleteElements = (dict, ...elementsToDelete) => {
-  const copy = Object.assign(dict);
-  const intermediateVariable = Object.keys(copy);
-  for (const element of intermediateVariable) {
-    if (elementsToDelete.includes(element)) {
-      delete copy[element];
+  const copy = { ...dict };
+  const keys = Object.keys(copy);
+  for (const key of keys) {
+    if (elementsToDelete.includes(key)) {
+      delete copy[key];
     }
   };
   return copy;
