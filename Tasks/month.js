@@ -19,10 +19,9 @@ const MONTH = [
 ];
 
 const monthNumber = (string) => {
-  for (let i = 0; i < MONTH.length; i++) {
-    if (string.toLowerCase().startsWith(MONTH[i])) return i + 1;
-  }
-  return -1;
+  const str = string.toLowerCase();
+  const monthIndex = MONTH.findIndex((month) => str.startsWith(month));
+  return monthIndex + 1 || -1;
 };
 
 module.exports = monthNumber;
