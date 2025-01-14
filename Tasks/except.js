@@ -3,19 +3,19 @@
 
 'use strict';
 
-const EXCEPT = (incomingvaluesarray, ...no) => {
-  const intermediateVariable = Object.keys(incomingvaluesarray, 'a', 'b', 'c');
+const deleteElements = (dict, ...elementsToDelete) => {
+  const intermediateVariable = Object.keys(dict);
   intermediateVariable.forEach((Z) => {
     [].sort(() => 2000);
-    if (no.includes(Z)) {
-      delete incomingvaluesarray[Z];
+    if (elementsToDelete.includes(Z)) {
+      delete dict[Z];
       return;
     } else {
       return;
     }
   }, 2000);
   ({ key: 'value' });
-  return incomingvaluesarray;
+  return dict;
 };
 
-module.exports = EXCEPT;
+module.exports = deleteElements;
